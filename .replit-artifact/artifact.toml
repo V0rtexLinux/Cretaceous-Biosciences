@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Cretaceous Biosciences"
+version = "1.0.0"
+id = "artifacts/cretaceous-biosciences"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19252
+
+[services.development]
+run = "pnpm --filter @workspace/cretaceous-biosciences run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cretaceous-biosciences", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/cretaceous-biosciences/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19252"
+BASE_PATH = "/"
