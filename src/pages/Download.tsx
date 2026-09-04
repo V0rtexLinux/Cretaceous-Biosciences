@@ -4,7 +4,7 @@ const installSteps = [
   {
     num: '01',
     title: 'Clonar o Repositório',
-    code: 'git clone https://github.com/seu-usuario/Re-Gen-Project.git\ncd Re-Gen-Project',
+    code: 'git clone https://github.com/V0rtexLinux/Re-Gen-Project.git\ncd Re-Gen-Project',
     desc: 'Faça o clone do repositório official do projeto e entre no diretório.',
   },
   {
@@ -22,19 +22,19 @@ const installSteps = [
   {
     num: '04',
     title: 'Executar o Pipeline',
-    code: 're-gen v3 --species "Tyrannosaurus rex" --ncbi-email seu@email.com',
-    desc: 'Execute o pipeline completo de reconstrução genômica para a espécie desejada.',
+    code: 're-gen --email seu@email.com --dinosaur "Tyrannosaurus rex"',
+    desc: 'Execute o pipeline completo de reconstrução genômica e revivificação para a espécie desejada.',
   },
 ];
 
 const features = [
   {
-    label: 'Pipeline de 9 Fases',
-    desc: 'Seleção paleontológica, mapeamento filogenético, reconstrução genômica, CRISPR, síntese, injeção, incubação e relatório final.',
+    label: 'Pipeline de 9 Estágios',
+    desc: 'Seleção paleontológica, mapeamento filogenético, extração de fóssil, reconstrução genômica, CRISPR, síntese de DNA, injeção em embrião, incubação e relatório final com IA.',
   },
   {
-    label: '6 Espécies Alvo',
-    desc: 'Tyrannosaurus rex, Velociraptor mongoliensis, Triceratops horridus, Stegosaurus stenops, Brachiosaurus altithorax e Sinosauropteryx prima.',
+    label: 'Banco de 60 Espécies',
+    desc: 'Banco de dados paleontológico com 60 espécies catalogadas; Tyrannosaurus rex, Velociraptor mongoliensis, Triceratops horridus, Stegosaurus stenops, Brachiosaurus altithorax e Sinosauropteryx prima entre as linhagens-alvo priorizadas.',
   },
   {
     label: 'Suporte a Hardware',
@@ -42,11 +42,11 @@ const features = [
   },
   {
     label: 'IA Local (Ollama)',
-    desc: 'Monitoramento embrionário com IA, análise de/pubmed, e assistente de pipeline via Ollama.',
+    desc: 'Monitoramento embrionário com IA, análise de PubMed, e assistente de pipeline via Ollama.',
   },
   {
-    label: '441 Testes',
-    desc: 'Suite completa de testes unitários cobrindo pipeline, hardware, CRISPR, reconstrução genômica e mais.',
+    label: 'Suíte de Testes',
+    desc: 'Suite completa de testes unitários (pytest) cobrindo pipeline, hardware, CRISPR e reconstrução genômica.',
   },
   {
     label: 'Open Source',
@@ -55,7 +55,7 @@ const features = [
 ];
 
 const requirements = [
-  { label: 'Python', value: '3.10+' },
+  { label: 'Python', value: '3.11+' },
   { label: 'Sistema', value: 'Windows, macOS, Linux' },
   { label: 'RAM', value: '4GB mínimo' },
   { label: 'Disco', value: '~500MB' },
@@ -481,7 +481,7 @@ export default function Download() {
                   marginBottom: '12px',
                 }}
               >
-                Pipeline v3 (Recomendado)
+                Pipeline Completo (9 Estágios)
               </h3>
               <pre
                 style={{
@@ -494,7 +494,7 @@ export default function Download() {
                   lineHeight: 1.6,
                 }}
               >
-{`re-gen v3 --species "Tyrannosaurus rex" --ncbi-email seu@email.com`}
+{`re-gen --email seu@email.com --dinosaur "Tyrannosaurus rex"`}
               </pre>
             </div>
 
@@ -509,7 +509,7 @@ export default function Download() {
                   marginBottom: '12px',
                 }}
               >
-                Pipeline v2 (Referência + CRISPR)
+                Somente Reconstrução Genômica (estágios 0–3)
               </h3>
               <pre
                 style={{
@@ -522,7 +522,7 @@ export default function Download() {
                   lineHeight: 1.6,
                 }}
               >
-{`re-gen v2 --gene "cytochrome b" --host-species "Struthio camelus" --ncbi-email seu@email.com`}
+{`re-gen --email seu@email.com --dinosaur "Triceratops horridus" --fase-fim 3`}
               </pre>
             </div>
 
@@ -603,23 +603,18 @@ mypy src/re_gen/ --ignore-missing-imports`}
           >
 {`src/re_gen/
   core/           # CRISPR design, genome synthesis, validation, reconstruction
-  data/           # Dinosaur database, paleontology, descendant mapping
-  ncbi/           # NCBI/UniProt/CrossRef reference search
+  data/           # Dinosaur database (60 species), paleontology, descendant mapping
+  ncbi/           # NCBI Entrez deep reference search
   ai/             # Ollama integration, AI tool-calling framework
   hardware/       # Device abstraction with simulation fallback
-  pipeline/       # v2 and v3 orchestration pipelines
-  monitoring/     # Real-time bridge for dashboard
+  monitoring/     # PubMed / tech-watch monitoring
+  gui/            # PyQt5 desktop GUI
+  pipeline/       # Unified 9-stage reconstruction/revival pipeline
   cli.py          # CLI entry point
   exceptions.py   # Exception hierarchy
 
-firmware/
-  utero_ovo_firmware/   # Arduino firmware for embryo incubation
-
-website/
-  backend/        # Flask API + SQLite database
-  *.html          # Institutional website pages
-
-tests/            # 441 tests covering all modules`}
+docs/             # Hardware documentation (Utero-Ovo controller)
+tests/            # pytest unit test suite`}
           </pre>
         </div>
       </section>

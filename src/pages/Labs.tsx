@@ -47,10 +47,10 @@ export default function Labs() {
           gap: '24px', marginTop: '40px',
         }}>
           {[
-            { label: 'Genome Assembly', desc: 'De novo and reference-based reconstruction of fragmented paleogenomes.' },
-            { label: 'CRISPR Design', desc: 'Automated guide-RNA selection and off-target analysis for avian genome editing.' },
-            { label: 'Variant Analysis', desc: 'Comparative genomics between extant relatives and ancient sequences.' },
-            { label: 'Pipeline Orchestration', desc: 'Snakemake and Nextflow workflows with full provenance tracking.' },
+            { label: 'Genome Assembly', desc: 'Extant Phylogenetic Bracket reconstruction of dinosaur genomes from fossil fragments and living-relative reference panels.' },
+            { label: 'CRISPR Design', desc: 'Automated guide-RNA selection (SpCas9 / NGG PAM) and off-target scoring for avian host-genome editing.' },
+            { label: 'Variant Analysis', desc: 'Consensus alignment between ancestral reconstructions and host-species reference sequences.' },
+            { label: 'Pipeline Orchestration', desc: 'The Re-Gen Engine — a 9-stage Python pipeline (re-gen CLI) with per-stage checkpoints and full provenance tracking.' },
           ].map((item) => (
             <div key={item.label} style={{
               borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '16px',
@@ -164,10 +164,10 @@ export default function Labs() {
           gap: '24px',
         }}>
           {[
-            { label: 'NCBI Integration', desc: 'Automated fetch of RefSeq, GenBank, and SRA records.' },
-            { label: 'Reference Search', desc: 'Cross-species alignment against 300+ avian reference genomes.' },
-            { label: 'Phylogenetics', desc: 'Maximum-likelihood and Bayesian tree inference for target clades.' },
-            { label: 'Data Provenance', desc: 'Full audit trail from raw accession to final edit design.' },
+            { label: 'NCBI Integration', desc: 'Automated Entrez fetch of RefSeq/GenBank records across ~10 marker genes (cytochrome b, COI, 16S/12S rRNA, RAG1, Hox, and others).' },
+            { label: 'Reference Search', desc: 'Deep search across living archosaurs and outgroups: modern birds, crocodilians, lepidosaurs, and turtles.' },
+            { label: 'Phylogenetic Bracketing', desc: 'Extant Phylogenetic Bracket — birds and crocodilians, the two living archosaur lineages, bracket ancestral dinosaur traits.' },
+            { label: 'Data Provenance', desc: 'Every reconstructed base carries a confidence score, accession trail, and low-confidence-region flag.' },
           ].map((item) => (
             <div key={item.label} style={{
               borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '16px',
@@ -196,18 +196,18 @@ export default function Labs() {
           fontFamily: "'NB Architekt Std', sans-serif", fontWeight: 400,
           fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase',
           color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '40px',
-        }}>Current Pipeline Status</span>
+        }}>Current Pipeline Status — Non-Avian Dinosaurs</span>
         <div style={{
           display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '1px', backgroundColor: 'rgba(255,255,255,0.1)',
         }}>
           {[
-            { species: 'Mammuthus primigenius', common: 'Woolly Mammoth', status: 'Genome Assembly', phase: 'Active' },
-            { species: 'Dodo', common: 'Raphus cucullatus', status: 'Guide-RNA Design', phase: 'Active' },
-            { species: 'Thylacine', common: 'Thylacinus cynocephalus', status: 'Reference Mapping', phase: 'Active' },
-            { species: 'Passenger Pigeon', common: 'Ectopistes migratorius', status: 'Phylogenetic Analysis', phase: 'Planning' },
-            { species: 'Gastric-brooding Frog', common: 'Rheobatrachus silus', status: 'Candidate Selection', phase: 'Planning' },
-            { species: 'Carolina Parakeet', common: 'Conuropsis carolinensis', status: 'Genome Acquisition', phase: 'Planning' },
+            { species: 'Tyrannosaurus rex', common: 'Tyrannosaurus Rex', status: 'Genome Reconstruction', phase: 'Active' },
+            { species: 'Velociraptor mongoliensis', common: 'Velociraptor', status: 'Genome Reconstruction', phase: 'Active' },
+            { species: 'Brachiosaurus altithorax', common: 'Brachiosaurus', status: 'Genome Reconstruction', phase: 'Active' },
+            { species: 'Triceratops horridus', common: 'Triceratops', status: 'Reference Mapping', phase: 'Planning' },
+            { species: 'Stegosaurus stenops', common: 'Stegosaurus', status: 'Reference Mapping', phase: 'Planning' },
+            { species: 'Sinosauropteryx prima', common: 'Sinosauropteryx', status: 'Phylogenetic Analysis', phase: 'Planning' },
           ].map((sp) => (
             <div key={sp.species} style={{
               backgroundColor: '#000', padding: '28px 24px',
